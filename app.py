@@ -3,13 +3,10 @@ from database import load_jobs_from_db
 
 app=Flask(__name__)
 
-
-
 @app.route("/")
 def hello_brian():
   jobs=load_jobs_from_db()
   return render_template('home.html',jobs=jobs,company_name="Royalty")
-
 
 if __name__ == '__main__':
   app.run(debug=True)
